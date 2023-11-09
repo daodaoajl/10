@@ -4,12 +4,9 @@
 
 void main(void)
 {
-  char src[] = "The worst things to eat before you sleep";
-  char dst[100];
-  
-  strcpy(dst,src);
-    
-  printf("copoed string : %s\n", dst);
+  char str[30] = "Happy C programming";
+      
+  printf("문자열 \"%s \"의 길이: %i\n", str, strlen(str));
   
   system("PAUSE");	
   return 0;
