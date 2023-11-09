@@ -2,28 +2,24 @@
 #include <stdlib.h>
 #include <string.h>
 
-int main(void)
+void main(void)
 {
-  FILE* fp;
+  FILE* fp = NULL;
+  char c;
   
-  char str[100];
-  int i;
-  
-  // 1. open file
-  fp = fopen("sample.txt","w");
-  
-  // 2. write file
-  for (i=0;i<3;i++)
+  fp = fopen("sample.txt","r");
+
+  if(fp==NULL)
   {
-      // 2-1. print "input a word"
-      printf("input a word :");
-      // 2-2. scanf a string 
-      scanf("%s", str);
-      // 2-3. fprintf()
-      fprintf(fp, "%s\n", str);
+      printf("failed to open\n");
+      return 0;         
   }
   
-  // 3. close file
+  while((c =fgetc(fp))!= EOF)
+  {
+      putchar(c);
+  }
+  
   fclose(fp);
   
   system("PAUSE");	
